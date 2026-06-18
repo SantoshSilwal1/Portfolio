@@ -11,14 +11,15 @@
         .navbar { background-color: #d4edda !important; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .nav-link { color: #2c3e50 !important; font-weight: 600; padding: 0.5rem 1rem !important; }
         
-        /* Hero Styling */
-        .hero { background: linear-gradient(135deg, #2c3e50, #4ca1af); color: white; padding: 80px 0; position: relative; overflow: hidden; }
-        /* Photo moved outside print div, but remains styled on web */
-        .hero-photo { position: absolute; top: 50%; right: 10%; transform: translateY(-50%); width: 200px; height: 200px; border: 4px solid white; border-radius: 50%; object-fit: cover; z-index: 10; }
+        /* Fixed Header Styling to prevent overlap */
+        .hero { background: linear-gradient(135deg, #2c3e50, #4ca1af); color: white; padding: 40px 20px; display: flex; align-items: center; justify-content: space-between; }
+        .hero-text { flex: 1; text-align: left; padding-left: 20px; }
+        .hero-photo-container { flex: 0 0 200px; padding-right: 20px; }
+        .hero-photo { width: 180px; height: 180px; border: 4px solid white; border-radius: 50%; object-fit: cover; }
         
-        section { padding: 50px 0; }
+        section { padding: 40px 0; }
         .card { border: none; margin-bottom: 20px; transition: 0.3s; }
-        .footer-custom { background-color: #e9ecef; padding: 40px 0; margin-top: 20px; border-top: 5px solid #2c3e50; }
+        .footer-custom { background-color: #e9ecef; padding: 30px 0; border-top: 5px solid #2c3e50; }
     </style>
 </head>
 <body>
@@ -37,15 +38,17 @@
     </div>
 </nav>
 
-<header class="hero text-center">
-    <div class="container">
-        <h1 class="display-2">Santosh Silwal</h1>
-        <p class="lead">Banking & IT Specialist | 14+ Years of Experience</p>
-    </div>
-    <img src="profile.jpg" alt="Santosh Silwal" class="hero-photo">
-</header>
-
 <div id="printable-content">
+    <header class="hero">
+        <div class="hero-text">
+            <h1 class="display-3">Santosh Silwal</h1>
+            <p class="lead">Banking & IT Specialist | 14+ Years of Experience</p>
+        </div>
+        <div class="hero-photo-container text-end">
+            <img src="profile.jpg" alt="Santosh Silwal" class="hero-photo">
+        </div>
+    </header>
+
     <section id="about" class="container">
         <h2 class="text-primary mb-4">About Me</h2>
         <p>Experienced professional with over 14 years in the banking sector. Specialized in IT Strategy, Business Process Automation, Credit Management, and General Banking operations.</p>
@@ -56,28 +59,25 @@
             <h2 class="text-primary mb-4">Work Experience</h2>
             <div class="card p-4 shadow-sm">
                 <h4>Kamana Sewa Bikash Bank Ltd (2018-Present)</h4>
-                <p><strong>Role:</strong> Acting Officer – IT Department</p>
                 <ul>
-                    <li>Spearheaded Business Process Automation (SmartDoc): Implemented 15+ systems including Credit/Memo Approval, Card Management, and Online Loan Eligibility.</li>
-                    <li>Managed product launches: QR payments, Branchless Banking, and migration to Omni Channel (KS I Mobile).</li>
-                    <li>System Operations: Administered SQL Server databases, Pumori IV CBS, and provided daily branch IT support.</li>
+                    <li>Spearheaded Business Process Automation (SmartDoc): Implemented 15+ systems (Credit/Memo Approval, Card/Lead Management, Online Loan Eligibility).</li>
+                    <li>Managed product launches (QR payments, Branchless Banking, Omni Channel migration).</li>
+                    <li>Administered SQL databases, Pumori IV CBS, and provided IT support.</li>
                 </ul>
             </div>
             <div class="card p-4 shadow-sm">
                 <h4>NIC ASIA Bank Ltd (2017-2018)</h4>
-                <p><strong>Role:</strong> Senior Assistant – HR Department</p>
                 <ul>
-                    <li>Automation: Created and managed HR automation projects and Learning Management Systems (LMS).</li>
-                    <li>Financial Operations: Managed payroll processing, Finacle entry verification, interest/tax calculations, and HRIS data management.</li>
+                    <li>HR Automation projects and Learning Management Systems (LMS) administration.</li>
+                    <li>Managed payroll processing, Finacle verification, and HRIS data management.</li>
                 </ul>
             </div>
             <div class="card p-4 shadow-sm">
                 <h4>ICFC Finance Ltd (2008-2017)</h4>
-                <p><strong>Roles:</strong> Supervisor (IT & Card), Senior Assistant (Credit), Assistant (General Banking)</p>
                 <ul>
-                    <li>IT: Administered VMware environments, SQL backups, Fortinet VPN, and network connectivity.</li>
-                    <li>Card: Managed ATM installation, card reconciliation, NRB reporting, and card/PIN activation.</li>
-                    <li>Credit: Conducted business inspections, SWORT analysis, and credit appraisal reports.</li>
+                    <li>IT infrastructure (VMware, SQL backups, network connectivity).</li>
+                    <li>Card Department (ATM installation, NRB reporting, reconciliation).</li>
+                    <li>Credit Department (Business inspections, SWORT analysis, credit appraisal).</li>
                 </ul>
             </div>
         </div>
@@ -89,22 +89,19 @@
             <ul>
                 <li><strong>MBA</strong> – Himalayan College of Management (2021)</li>
                 <li><strong>BBS</strong> – Shanker Dev Campus, TU (2015)</li>
-                <li><strong>+2</strong> – PLSMC (2007)</li>
-                <li><strong>S.L.C</strong> – Shree Janagyan Niketan (2004)</li>
             </ul>
         </div>
     </section>
 
-    <section id="training" class="bg-light">
-        <div class="container">
-            <h2 class="text-primary mb-4">Training & Skills</h2>
-            <div class="card p-4 shadow-sm">
-                <ul>
-                    <li><strong>Technical:</strong> SQL Server Admin, CompTIA A+, C# Asp.Net, VMware.</li>
-                    <li><strong>Banking Software:</strong> Pumori IV, Finacle (V7/V10), Izone, HRIS & Empower.</li>
-                    <li><strong>Professional:</strong> Productive Sector Lending, IT Security, AML/CFT, Customer Relation Training.</li>
-                </ul>
-            </div>
+    <!-- Brought Training & Skills up -->
+    <section id="training" class="container" style="margin-top: -30px;">
+        <h2 class="text-primary mb-4">Training & Skills</h2>
+        <div class="card p-4 shadow-sm">
+            <ul>
+                <li><strong>Technical:</strong> SQL Server Admin, CompTIA A+, C# Asp.Net, VMware.</li>
+                <li><strong>Banking Software:</strong> Pumori IV, Finacle (V7/V10), HRIS & Empower.</li>
+                <li><strong>Professional:</strong> Productive Sector Lending, IT Security, AML/CFT, Customer Relation.</li>
+            </ul>
         </div>
     </section>
 
@@ -113,7 +110,6 @@
             <h2 class="text-primary mb-3">Contact Me</h2>
             <p><strong>Phone:</strong> 9851126760 | 9841681760</p>
             <p><strong>Email:</strong> santoshsilwal@gmail.com</p>
-            <p><strong>Address:</strong> Tokha, Kathmandu, Nepal</p>
         </div>
     </footer>
 </div>
