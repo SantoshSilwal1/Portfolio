@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santosh Silwal | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body { background-color: #f8f9fa; }
+        .navbar { background-color: #d4edda !important; }
+        .footer-custom { background-color: #d1ecf1 !important; color: #333; }
+        .hero { background: linear-gradient(135deg, #2c3e50, #4ca1af); color: white; padding: 80px 0; position: relative; overflow: hidden; }
+        .hero-photo { position: absolute; top: 50%; right: 10%; transform: translateY(-50%); width: 200px; height: 200px; border: 4px solid rgba(255,255,255,0.3); border-radius: 50%; object-fit: cover; }
+        section { padding: 50px 0; }
+        .card { border: none; transition: transform 0.3s; margin-bottom: 20px; }
+        #cv-content { display: none; padding: 40px; font-family: Arial, sans-serif; color: #000; width: 100%; box-sizing: border-box; }
+        .pdf-header { display: flex; justify-content: space-between; align-items: flex-start; }
+        .pdf-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; }
+        h1, h2 { color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Santosh Silwal</a>
+        <div class="navbar-nav ms-auto">
+            <button class="btn btn-warning btn-sm me-3" onclick="generatePDF()">Download Full CV</button>
+        </div>
+    </div>
+</nav>
+
+<header class="hero text-center">
+    <div class="container">
+        <h1 class="display-2">Santosh Silwal</h1>
+        <p class="lead">Banking & IT Specialist | 14+ Years of Experience</p>
+    </div>
+    <img src="profile.jpg" alt="Santosh Silwal" class="hero-photo">
+</header>
+
+<section id="about" class="container">
+    <h2 class="text-primary mb-4">About Me</h2>
+    <p>Experienced professional with over 14 years in the banking sector. Specialized in IT Strategy, Business Process Automation, Credit Management, and General Banking operations.</p>
+</section>
+
+<section id="experience" class="bg-white">
+    <div class="container">
+        <h2 class="text-primary mb-4">Work Experience</h2>
+        <div class="card shadow-sm p-4">
+            <h4>IT Officer | Kamana Sewa Bikash Bank Ltd</h4>
+            <p class="text-muted">Jan 2019 - Oct 2023</p>
+            <ul>
+                <li>Managed QR payments, Branchless Banking, and Business Process Automation.</li>
+                <li>Operated CBS and managed migration to Omni Channel (KS I Mobile).</li>
+            </ul>
+        </div>
+        <div class="card shadow-sm p-4">
+            <h4>Senior Assistant | NIC Asia Bank Ltd</h4>
+            <p class="text-muted">Jan 2018 - Jan 2019</p>
+            <ul>
+                <li>Automated HR tasks and managed Learning Management Systems (LMS).</li>
+                <li>Handled Finacle entry verification and payroll processing.</li>
+            </ul>
+        </div>
+        <div class="card shadow-sm p-4">
+            <h4>Supervisor / Senior Assistant | ICFC Finance Ltd</h4>
+            <p class="text-muted">Jan 2008 - Dec 2017</p>
+            <ul>
+                <li>Managed IT infrastructure (VMware, SQL backups) and Card Department operations.</li>
+                <li>Conducted credit appraisals, site visits, and general banking operations.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="container">
+    <h2 class="text-primary mb-4">Education</h2>
+    <div class="card shadow-sm p-4">
+        <ul>
+            <li><strong>Master in ICT</strong> - Canterbury Institute of Management, Australia (2025)</li>
+            <li><strong>MBA</strong> - Infrastructure University Kuala Lumpur (2021)</li>
+            <li><strong>BBS</strong> - Tribhuvan University, Nepal (2015)</li>
+            <li><strong>Intermediate (+2)</strong> - HSEB, Nepal (2008)</li>
+            <li><strong>SLC</strong> - School Leaving Certificate, Nepal (2005)</li>
+        </ul>
+    </div>
+</section>
+
+<section id="training" class="bg-white">
+    <div class="container">
+        <h2 class="text-primary mb-4">Training & Certificates</h2>
+        <div class="card shadow-sm p-4">
+            <ul>
+                <li>SQL Server (Mirror Institute)</li>
+                <li>IT Security (National Banking Institute)</li>
+                <li>Tally Accounting Software (MPICC)</li>
+                <li>CompTIA A+ (Comptech Group)</li>
+                <li>Productive Sector Lending (NBI)</li>
+                <li>Customer Relation Training (The New ERA)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer id="contact" class="footer-custom py-5 text-center">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <p><strong>Address:</strong> Tokha, Kathmandu | <strong>Phone:</strong> 9851126760</p>
+        <p><strong>Email:</strong> santoshsilwal@gmail.com</p>
+    </div>
+</footer>
+
+<!-- FULL HIDDEN CONTENT FOR PDF -->
+<div id="cv-content">
+    <div class="pdf-header">
+        <div>
+            <h1>Santosh Silwal</h1>
+            <p><strong>Phone:</strong> 9851126760 | <strong>Email:</strong> santoshsilwal@gmail.com</p>
+        </div>
+        <img src="profile.jpg" class="pdf-img" alt="Photo">
+    </div>
+    <hr>
+    <h2>Career Summary</h2>
+    <p>Experienced professional with over 14 years in the banking sector. Specialized in IT Strategy, Business Process Automation, Credit Management, and General Banking operations.</p>
+    
+    <h2>Work Experience</h2>
+    <p><strong>IT Officer | Kamana Sewa Bikash Bank Ltd (Jan 2019 - Oct 2023)</strong></p>
+    <ul>
+        <li>Managed QR payments, Branchless Banking, and Business Process Automation.</li>
+        <li>Operated CBS and managed migration to Omni Channel (KS I Mobile).</li>
+    </ul>
+    <p><strong>Senior Assistant | NIC Asia Bank Ltd (Jan 2018 - Jan 2019)</strong></p>
+    <ul>
+        <li>Automated HR tasks and managed Learning Management Systems (LMS).</li>
+        <li>Handled Finacle entry verification and payroll processing.</li>
+    </ul>
+    <p><strong>Supervisor / Senior Assistant | ICFC Finance Ltd (Jan 2008 - Dec 2017)</strong></p>
+    <ul>
+        <li>Managed IT infrastructure (VMware, SQL backups) and Card Department operations.</li>
+        <li>Conducted credit appraisals, site visits, and general banking operations.</li>
+    </ul>
+
+    <h2>Education</h2>
+    <ul>
+        <li>Master in ICT - Canterbury Institute of Management, Australia (2025)</li>
+        <li>MBA - Infrastructure University Kuala Lumpur (2021)</li>
+        <li>BBS - Tribhuvan University, Nepal (2015)</li>
+        <li>Intermediate (+2) - HSEB, Nepal (2008)</li>
+        <li>SLC - School Leaving Certificate, Nepal (2005)</li>
+    </ul>
+
+    <h2>Training & Certificates</h2>
+    <ul>
+        <li>SQL Server (Mirror Institute)</li>
+        <li>IT Security (National Banking Institute)</li>
+        <li>Tally Accounting Software (MPICC)</li>
+        <li>CompTIA A+ (Comptech Group)</li>
+        <li>Productive Sector Lending (NBI)</li>
+        <li>Customer Relation Training (The New ERA)</li>
+    </ul>
+</div>
+
+<script>
+    function generatePDF() {
+        const element = document.getElementById('cv-content');
+        element.style.display = 'block';
+        const opt = {
+            margin: 15,
+            filename: 'Santosh_Silwal_CV.pdf',
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save().then(() => {
+            element.style.display = 'none';
+        });
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
