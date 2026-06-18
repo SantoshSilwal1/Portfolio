@@ -11,9 +11,10 @@
         .navbar { background-color: #d4edda !important; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .nav-link { color: #2c3e50 !important; font-weight: 600; padding: 0.5rem 1rem !important; }
         
-        /* Hero Styling with Photo */
+        /* Hero Styling */
         .hero { background: linear-gradient(135deg, #2c3e50, #4ca1af); color: white; padding: 80px 0; position: relative; overflow: hidden; }
-        .hero-photo { position: absolute; top: 50%; right: 10%; transform: translateY(-50%); width: 200px; height: 200px; border: 4px solid rgba(255,255,255,0.3); border-radius: 50%; object-fit: cover; }
+        /* Photo moved outside print div, but remains styled on web */
+        .hero-photo { position: absolute; top: 50%; right: 10%; transform: translateY(-50%); width: 200px; height: 200px; border: 4px solid white; border-radius: 50%; object-fit: cover; z-index: 10; }
         
         section { padding: 50px 0; }
         .card { border: none; margin-bottom: 20px; transition: 0.3s; }
@@ -36,16 +37,15 @@
     </div>
 </nav>
 
-<div id="printable-content">
-    
-    <header class="hero text-center">
-        <div class="container">
-            <h1 class="display-2">Santosh Silwal</h1>
-            <p class="lead">Banking & IT Specialist | 14+ Years of Experience</p>
-        </div>
-        <img src="profile.jpg" alt="Santosh Silwal" class="hero-photo">
-    </header>
+<header class="hero text-center">
+    <div class="container">
+        <h1 class="display-2">Santosh Silwal</h1>
+        <p class="lead">Banking & IT Specialist | 14+ Years of Experience</p>
+    </div>
+    <img src="profile.jpg" alt="Santosh Silwal" class="hero-photo">
+</header>
 
+<div id="printable-content">
     <section id="about" class="container">
         <h2 class="text-primary mb-4">About Me</h2>
         <p>Experienced professional with over 14 years in the banking sector. Specialized in IT Strategy, Business Process Automation, Credit Management, and General Banking operations.</p>
@@ -124,7 +124,7 @@
         const opt = {
             margin: 10,
             filename: 'Santosh_Silwal_CV.pdf',
-            image: { type: 'jpeg', quality: 1 },
+            image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2, useCORS: true },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
